@@ -1,18 +1,26 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <buttonComp username="Tzahi" :click="click" msg="Tzahi's context-menu"></buttonComp>
+    <menu :click="click" isFolder = false></menu>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import mymenu from "./components/menu.vue";
+import buttonComp from './components/buttonComp.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    buttonComp,
+    mymenu
+  },
+  data(){
+    return{
+      click: false,
+    }
+  },
 }
 </script>
 
